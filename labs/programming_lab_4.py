@@ -6,7 +6,6 @@ DAILY_RATE = 24
 DISCOUNT_DAYS = 10
 DAY_DISCOUNT_AMOUNT = 0.1 # (Percent off)
 
-
 # vars
 total_dogs = 0
 total_boarding_days = 0
@@ -52,12 +51,12 @@ print("\n# Pet boarding summary")
 print("  " + "-" * 50)
 print(f"• Total dogs: {total_dogs}")
 print(f"• Total boarding days: {total_boarding_days}")
-print(f"• Average stay: {int(average_stay_length) if average_stay_length.is_integer() else average_stay_length} {"days" if average_stay_length else ""}")
+print(f"• Average stay: {int(average_stay_length) if (average_stay_length and average_stay_length.is_integer()) else average_stay_length} {"days" if average_stay_length else ""}")
 print(f"• Longest stay: {longest_stay} {"days" if longest_stay else ""}")
 
 if total_boarding_days > 10:
     print("- You have totalled more than 10 days! 10% discount applied!")
     total_dollars *= (1 - DAY_DISCOUNT_AMOUNT)
-
+    
 print(f"• Grand total: ${total_dollars:.2f}")
 print("  " + "-" * 50 + "\n")
