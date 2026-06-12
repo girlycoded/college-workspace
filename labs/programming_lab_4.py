@@ -37,7 +37,7 @@ while True:
     total_boarding_days += boarding_day_count
     total_dogs += 1
 
-    if longest_stay or 0 < boarding_day_count:
+    if (longest_stay or 0) < boarding_day_count:
         longest_stay = boarding_day_count
 
     print(f"{dog_name} has been added for {boarding_day_count} day{"s" if boarding_day_count != 1 else ""}!")
