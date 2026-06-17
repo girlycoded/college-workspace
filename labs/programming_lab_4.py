@@ -21,7 +21,7 @@ def get_valid_input(type_, prompt: str = "Please enter an integer: ") -> int:
             print("Invalid Input!")
 
 while True:
-    user_input = input("Please enter the name of the dog or or 'quit' to quit: ").lower()
+    user_input = input("Please enter the name of the dog or 'quit' to quit: ").lower()
     if user_input == "quit": break
 
     dog_name = user_input.strip().capitalize()
