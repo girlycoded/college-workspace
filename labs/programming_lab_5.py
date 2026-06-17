@@ -1,19 +1,28 @@
 # name: joosan tibbetts | Computer Haven
 # desc: Provide UI to allow companies to register for instructional seminars
 
-import subprocess, json
+# IMPORTS
+import subprocess
+
+# CLASSES
+class CompanyItem:
+    name: str
+    attendee_count: int
 
 # CONSTS
+ATTENDEE_COST = 25
+
 BOLD = "\033[1m"
 IL = "\033[3m"
 UL = "\x1b[4m"
+UB = "\033[22m"
 YELLOW = "\033[33m"
 RESET = "\033[0m"
 
 DEFAULT_MESSAGE = f"Welcome to {UL + BOLD}Computer Haven!{RESET} "
 
 # VARS
-companies = []
+companies: list[CompanyItem] = []
 
 user_prompt = ""
 func_map = {}
@@ -62,19 +71,54 @@ def remove_company():
             companies.pop(company_index)
             print(f"Removed latest '{company_name}' entry!")
             return
+    
     print(f"No company of name: '{company_name}'")
 
 def bill():
     print("[Billing]")
     if len(companies) == 0: warn("No companies added yet. No bill displayed."); return
 
-    print(YELLOW, json.dumps(companies, indent=1), RESET, sep="")
-    input("Press enter to continue...")
+    total_bill = 0
+
+    print(f"Companies:\033[34m")
+
+    # Foind longest company name for formatting the table
+    longest_company_name_length = 4
+    longest_attendee_count_length = 15
+    longest_cost_length = 4
+
+    for _, company in enumerate(companies):
+        company_name_length = len(company["name"])
+        company_cost_length = len(f"{ATTENDEE_COST * company["attendee_count"]:.2f}")
+        company_attendee_company_length = len(str(company["attendee_count"]))
+
+        if longest_company_name_length < company_name_length: longest_company_name_length = company_name_length
+        if longest_attendee_count_length < company_attendee_company_length: longest_attendee_count_length = company_attendee_company_length
+        if longest_cost_length < company_cost_length: longest_cost_length = company_cost_length
+
+    name_spacing = " " * (longest_company_name_length - 4)
+    attendee_count_spacing = " " * (longest_attendee_count_length - 15)
+    cost_spacing = " " * (longest_cost_length - 3)
+
+    print(f"{BOLD}| Name {name_spacing}| Attendee Count {attendee_count_spacing}| Cost {cost_spacing}| {UB}")
+
+    for _, company in enumerate(companies):
+        company_cost = ATTENDEE_COST * company["attendee_count"]
+        company_cost_str = f"{company_cost:.2f}"
+        total_bill += company_cost
+
+        name_spacing = " " * (longest_company_name_length - len(company["name"]))
+        attendee_count_spacing = " " * (longest_attendee_count_length - len(str(company["attendee_count"])))
+        cost_spacing = " " * (longest_cost_length - len(company_cost_str))
+        
+        print(f"| {company["name"]} {name_spacing}| {company["attendee_count"]}{attendee_count_spacing}| ${company_cost_str}{cost_spacing} |")
+    
+    print(f"\n{RESET}Final bill: {BOLD}${total_bill:.2f}{RESET}")
 
 
 def init():
-    global user_prompt
     global func_map
+    global user_prompt
 
     clear()
 
@@ -102,4 +146,5 @@ while True:
 
     if user_input in func_map: 
         result = func_map[user_input]()
+    else: warn(f"Invalid command '{user_input}'")
     
