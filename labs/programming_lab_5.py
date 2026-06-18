@@ -2,7 +2,7 @@
 # desc: Provide TUI to allow companies to register for instructional seminars
 
 # IMPORTS
-import subprocess
+import subprocess, os
 
 # CLASSES
 class CompanyItem:
@@ -33,14 +33,14 @@ def warn(msg: str):
     print(YELLOW + msg + RESET)
 
 def clear(msg=DEFAULT_MESSAGE):
-    subprocess.call("cls", shell=True)
+    subprocess.call("cls" if os.name == "nt" else "clear", shell=True)
     print(msg, end="", flush=True)
 
 def quit(exit_code = 0):
     clear(f"{IL}{YELLOW}Goodbye!{RESET} ( .w.)ノ Thank you for using {BOLD}{UL}Computer Haven!{RESET}")
     exit(exit_code)
 
-def get_valid_input(data_type: function, prompt: str = None, max_amount: int = None) -> int:
+def get_valid_input(data_type: callable, prompt: str = None, max_amount: int = None) -> int:
     prompt = prompt or f"Please enter an {data_type.__name__}: "
 
     while True:
@@ -108,7 +108,7 @@ def bill():
     print("[Billing]")
     if len(companies) == 0: warn("No companies added yet. No bill displayed."); return
 
-    # Foind longest company name for formatting the table
+    # Find longest company name for formatting the table
     longest_company_name_length = 4
     longest_attendee_count_length = 15
     longest_cost_length = 4
