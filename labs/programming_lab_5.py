@@ -128,7 +128,7 @@ def bill():
 
     header_length = len(name_spacing) + len(attendee_count_spacing) + len(cost_spacing) + 19
 
-    print(f"\n{BLUE}┌{RESET}{BOLD} Companies {RESET}{BLUE}{"─" * header_length}┐")
+    print(f"\n{BLUE}┌{RESET}{BOLD} Companies {RESET}{BLUE}{'─' * header_length}┐")
     print(f"{BOLD}│ Name {name_spacing}│ Attendee Count {attendee_count_spacing}│ Cost {cost_spacing}│ {UB}")
 
     total_bill = 0
@@ -142,8 +142,8 @@ def bill():
         attendee_count_spacing = " " * (longest_attendee_count_length - len(str(company["attendee_count"])))
         cost_spacing = " " * (longest_cost_length - len(company_cost_str))
         
-        print(f"│ {company["name"]} {name_spacing}│ {company["attendee_count"]}{attendee_count_spacing}│ ${company_cost_str}{cost_spacing} │")
-    print(f"└{"─" * (header_length + 11)}┘")
+        print(f"│ {company['name']} {name_spacing}│ {company['attendee_count']}{attendee_count_spacing}│ ${company_cost_str}{cost_spacing} │")
+    print(f"└{'─' * (header_length + 11)}┘")
 
     print(f"{RESET}\nTotal attendees: {BOLD}{get_attendee_total()}{RESET}")
     print(f"Final bill: {BOLD}${total_bill:.2f}{RESET}")

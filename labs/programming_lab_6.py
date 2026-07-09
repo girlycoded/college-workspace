@@ -57,8 +57,8 @@ def display_boarding_summary(average_stay_length, total_dollars):
     print("  " + "-" * 50)
     print(f"• Total dogs: {total_dogs}")
     print(f"• Total boarding days: {total_boarding_days}")
-    print(f"• Longest stay: {longest_stay} {"days" if longest_stay else ""}")
-    print(f"• Average stay: {int(average_stay_length) if (average_stay_length and average_stay_length.is_integer()) else average_stay_length} {"days" if average_stay_length else ""}")
+    print(f"• Longest stay: {longest_stay} {'days' if longest_stay else ''}")
+    print(f"• Average stay: {int(average_stay_length) if (average_stay_length and average_stay_length.is_integer()) else average_stay_length} {'days' if average_stay_length else ''}")
 
     if total_boarding_days > 10:
         print("- You have totalled more than 10 days! 10% discount applied!")
@@ -66,7 +66,7 @@ def display_boarding_summary(average_stay_length, total_dollars):
     
     print(f"• {vip_count} VIP dogs")
     print(f"• Grand total: ${total_dollars:.2f}")
-    print(f"  {"-" * 50}\n\n")
+    print(f"  {'-' * 50}\n\n")
 
 def add_dog(name, boarding_days, is_vip):
     # Add dog, modify globals for sum total
@@ -78,7 +78,7 @@ def add_dog(name, boarding_days, is_vip):
 
     if (longest_stay or 0) < boarding_days:
         longest_stay = boarding_days
-    print(f"{name} has been added for {boarding_days} day{"s" if boarding_days != 1 else ""}!")
+    print(f"{name} has been added for {boarding_days} day{'s' if boarding_days != 1 else ''}!")
 
 def main():
     # Prompt and add user inputted dogs until quit is entered
