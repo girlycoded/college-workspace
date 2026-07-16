@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Zip current file's directory",
+      "type": "shell",
+      "command": "cd \"${fileDirname}\" && zip -r \"../${fileDirnameBasename}.zip\" .",
+      "problemMatcher": []
+    }
+  ]
+}
