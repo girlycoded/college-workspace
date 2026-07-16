@@ -4,7 +4,7 @@
     {
       "label": "Zip current file's directory",
       "type": "shell",
-      "command": "cd \"${fileDirname}\" && zip -r \"../${fileDirnameBasename}.zip\" .",
+      "command": "mkdir -p \"${workspaceFolder}/build\" && cd \"${fileDirname}\" && rm -f \"${workspaceFolder}/build/${fileDirnameBasename}.zip\" && zip -r \"${workspaceFolder}/build/${fileDirnameBasename}.zip\" . -x \"build/*\" -x \"*/build/*\" && grep -qxF 'build/' \"${workspaceFolder}/.gitignore\" 2>/dev/null || echo 'build/' >> \"${workspaceFolder}/.gitignore\"",
       "problemMatcher": []
     }
   ]
