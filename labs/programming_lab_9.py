@@ -3,7 +3,7 @@
 
 # CONSTS
 from typing import Callable
-import os
+import os, random
 
 BOLD = "\033[1m"; IL = "\033[3m"; UL = "\x1b[4m"; UB = "\033[22m"; YELLOW = "\033[33m"; BLUE="\033[34m"; RESET = "\033[0m"; CLR = "\033c";
 
@@ -15,7 +15,7 @@ HEADER = INTRODUCTION
 book_inventory = {
     "book_id": ("Book Name", "category", 10, 14.99), 
 }
-categories = {"action", "fantasy", "horror", "romance", "poetry", "sci-fi"}
+categories = {"", "action", "fantasy", "horror", "romance", "poetry", "sci-fi"}
 low_stock_items = []
 callables: dict[str, Callable] = {}
 
@@ -64,8 +64,17 @@ def get_category_prompt():
 
 def add_item():
     clear_terminal(HEADER + info(" [Adding Book]\n"))
-    item_name = get_valid_input("What is the name of the item you would like to add: ")
+    item_name = get_valid_input("What is the name of the book you would like to add: ")
     item_category = get_valid_input(get_category_prompt(), str, _validate_category)
+    price = get_valid_input("What is the price per copy: ", float)
+    quantity = get_valid_input("What is the current stock of the product: ", int)
+
+    # add the book
+    book_id = ""
+    while book_id in book_inventory or not book_id:
+        book_id = f"{item_category[:3]}_{item_name[:3]}_{random.randint(0, 999):03d}"
+    
+    book_inventory[book_id] = (item_name, item_category, quantity, price)
 
 def display_options_menu():
     user_input = get_valid_input("\n" + prompt, str, None).strip().lower()
