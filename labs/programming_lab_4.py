@@ -40,7 +40,7 @@ while True:
     if (longest_stay or 0) < boarding_day_count:
         longest_stay = boarding_day_count
 
-    print(f"{dog_name} has been added for {boarding_day_count} day{"s" if boarding_day_count != 1 else ""}!")
+    print(f"{dog_name} has been added for {boarding_day_count} day{'s' if boarding_day_count != 1 else ''}!")
 
 # Calculate data
 average_stay_length = total_boarding_days / (total_dogs) if total_dogs else None
@@ -52,7 +52,7 @@ print("  " + "-" * 50)
 print(f"• Total dogs: {total_dogs}")
 print(f"• Total boarding days: {total_boarding_days}")
 print(f"• Average stay: {int(average_stay_length) if (average_stay_length and average_stay_length.is_integer()) else average_stay_length} {"days" if average_stay_length else ""}")
-print(f"• Longest stay: {longest_stay} {"days" if longest_stay else ""}")
+print(f"• Longest stay: {longest_stay} {'days' if longest_stay else ''}")
 
 if total_boarding_days > 10:
     print("- You have totalled more than 10 days! 10% discount applied!")

@@ -1,3 +1,4 @@
 build/
 class/garbage_file.py
 .DS_Store
+*.txt
