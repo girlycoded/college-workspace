@@ -1,0 +1,25 @@
+{
+	"items": {
+		"boo_tex_325": [
+			"Textbook",
+			"books",
+			10.99,
+			300
+		],
+		"app_0_444": [
+			"0",
+			"apparel",
+			0.0,
+			0
+		],
+		"mer_bob_142": [
+			"Bob",
+			"merch",
+			1000.0,
+			10
+		]
+	},
+	"low_stock_items": [
+		"app_0_444"
+	]
+}
