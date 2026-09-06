@@ -1,4 +1,4 @@
-import validation, formatting, random, json
+import cs1400.labs.bookstore.validation as validation, cs1400.labs.bookstore.formatting as formatting, random, json
 
 items = {}
 low_stock_items = []

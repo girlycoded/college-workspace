@@ -2,7 +2,7 @@
 # desc: book store
 
 # CONSTS
-import typing, formatting, validation, inventory
+import typing, cs1400.labs.bookstore.formatting as formatting, cs1400.labs.bookstore.validation as validation, cs1400.labs.bookstore.inventory as inventory
 
 TITLE = formatting.UL + "THE BOOKSTORE" + formatting.RESET
 INTRODUCTION = f"Welcome to {TITLE}!"

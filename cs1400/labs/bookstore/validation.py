@@ -1,4 +1,4 @@
-import formatting, typing
+import cs1400.labs.bookstore.formatting as formatting, typing
 
 categories = {"apparel", "books", "dorm", "electronics", "merch", "snacks", "supplies"}
 

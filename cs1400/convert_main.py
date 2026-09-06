@@ -1,4 +1,4 @@
-from convert import cel_tor_far, far_to_cel
+from cs1400.convert import cel_tor_far, far_to_cel
 from pprint import pprint
 
 temp = float(input("Enter a temperature in celsius "))

@@ -1,4 +1,4 @@
-import geometry
+import cs1400.geometry as geometry
 
 measurements = tuple(input("Enter length and width seperated: ").split("x"))
 length, width = float(measurements[0]), float(measurements[1])

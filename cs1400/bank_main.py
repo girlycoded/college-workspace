@@ -1,4 +1,4 @@
-import bank
+import cs1400.bank as bank
 
 balance = 500
 

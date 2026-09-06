@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/juli/Documents/VSC Projects/python-workspace/cs1410/module1/hi-lo'
+relocations:     []
+...

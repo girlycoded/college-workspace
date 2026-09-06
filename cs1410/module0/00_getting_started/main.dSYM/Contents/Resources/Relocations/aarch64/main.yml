@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/juli/Documents/VSC Projects/education-code/00_getting_started/main'
+relocations:     []
+...
