@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "01_Try_It_Out_Control_Structures",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "01_Try_It_Out_Control_Structures::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-01_Try_It_Out_Control_Structures-Debug-720348c9abb0629007ee.json",
+					"name" : "01_Try_It_Out_Control_Structures",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/kmurphy.EH372-010123611/Documents/CS 1410/00-Try-It-Out/01 Try-It-Out Control Structures/cmake-build-debug",
+		"source" : "C:/Users/kmurphy.EH372-010123611/Documents/CS 1410/00-Try-It-Out/01 Try-It-Out Control Structures"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

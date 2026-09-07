@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/juli/Documents/VSC Projects/education-code/cs1410/module1/slot_machine/main'
+relocations:     []
+...

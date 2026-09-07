@@ -20,10 +20,10 @@ void Example1() {
   cout << "2. " << (x + 2) * 5 + 1 << endl;
 
   cout << "3. "
-       << "x: " << x++ << " "
-       << " y: " << ++y << endl;
+	   << "x: " << x++ << " "
+	   << " y: " << ++y << endl;
   cout << "x: " << x << " "
-       << " y: " << y << endl;
+	   << " y: " << y << endl;
 
   cout << "4. " << setprecision(3) << 1.23456 << endl;
 
@@ -35,14 +35,14 @@ void Example1() {
 
   cout << "7  \n";
   cout << "Type"
-       << "Equation"
-       << "Result" << endl;
+	   << "Equation"
+	   << "Result" << endl;
   cout << "Int"
-       << "11 / 4" << 11 / 4 << endl;
+	   << "11 / 4" << 11 / 4 << endl;
   cout << "Mod"
-       << "11 % 4" << 11 % 4 << endl;
+	   << "11 % 4" << 11 % 4 << endl;
   cout << "Regular"
-       << "11.0 / 4" << 11.0 / 4 << endl;
+	   << "11.0 / 4" << 11.0 / 4 << endl;
 }
 
 void Example2() {
@@ -58,26 +58,31 @@ void Example2() {
 
   // Determine the unit of measurment
   if (unit == 'f' || unit == 'F') {
-    // Get the Input
-    cout << "Enter Fahrenheit: ";
-    cin >> fah;
+	// Get the Input
+	cout << "Enter Fahrenheit: ";
+	cin >> fah;
 
-    // Do the Math
-    cel = 5 / 9 * (fah - 32);
+	// Do the Math
+	cel = 5 / 9 * (fah - 32);
 
-    // Display the output
-    cout << "Celsius: " << cel << endl;
+	// Display the output
+	cout << "Celsius: " << cel << endl;
   } else {
-    // Add the code to allow the user to enter the Celsius
-    // Use the equation to convert the Celsius to Fahrenheit
-    // Display the tempature in Fahrenheit
+	cout << "Enter Celcius: ";
+	cin >> cel;
+
+	fah = (9.0 / 5) * cel + 32;
+	cout << "Farenheit: " << fah << endl;
   }
 }
 
 
 
 int main() {
-  Example1();
-  // Example2();
+	int abc = 0;
+	cout << ++abc;
+	cout << abc;
+	// Example1();
+	// Example2();
 
 }
